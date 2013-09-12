@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--
+Kevin Fry
+VFW 1309
+Project 1
+-->
 <html>
     <head>
         <title>My Shopping Application: Add Pricebook Item</title>
@@ -11,24 +16,38 @@
     <body>
         <h1>Add Pricebook Item</h1>
         <form>
+            
+            <a href="#" title="Load Default Information">Load Default Information</a><br />
             <label for="productBrand">Product Brand</label><br />
             <input type="text" name="productBrand" id="productBrand"><br />
             <label for="productName">Product Name</label><br />
             <input type="text" name="productName" id="productName"><br />
             <label for="productDescription">Product Description</label><br />
             <textarea name="productDescription" id="productDescription"></textarea><br />
+            <label for="productRating">Product Rating</label><br />
+            poor &lt;- <input type="range" name="productRating" min="1" max="5" id="productRating"> -&gt; great<br />
             <fieldset>
+                <legend>Price &amp; Cost Information</legend>
                 <label for="priceD">Price</label><br />
-                $<input type="range" name="dollars" min="0" max="100" id="priceD">.<input type="range" name="cents" min="00" max="99" id="priceC"><br />
+                $<input type="text" name="dollars" id="priceD" size="2">.<input type="range" name="cents" min="00" max="99" id="priceC"><br />
                 <label for="tax">Tax?</label><br />
-                <input type="radio" name="sex" value="1">Yes<br />
-                <input type="radio" name="sex" value="0">No<br />
+                <input type="radio" name="tax" value="1">Yes<br />
+                <input type="radio" name="tax" value="0">No<br />
             </fieldset>
-            
             <label for="datePurchased">Date Purchased</label><br />
             <input type="date" name="datePurchased" id="datePurchased"><br />
-
-            
+            <label for="sizeType">Size Type</label><br />
+            <select name="size" id="sizeType">
+                <option value="ct">count</option>
+                <option value="ea">each</option>
+                <option value="pk">pack</option>
+                <option value="fl oz">fluid ounce</option>
+                <option value="oz">ounce(s)</option>
+                <option value="lbs">pound(s)</option>
+            </select>
+            <br />
+            <input type="hidden" name="formType" value="add">
+            <input type="submit" value="Add Item"><br />
         </form>
     </body>
 </html>
